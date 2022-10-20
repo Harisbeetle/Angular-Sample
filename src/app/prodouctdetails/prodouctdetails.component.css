@@ -1,0 +1,14 @@
+.card {
+  display: flex;
+  margin-top: 10px;
+  margin-left: 300px;
+  width: 300px;
+  font-size:small;
+}
+
+ .images-card{
+    height: 100px;
+    object-fit: cover;
+
+ }
+

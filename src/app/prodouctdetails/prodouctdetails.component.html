@@ -1,0 +1,47 @@
+<div *ngIf="product" class="card" style="width: 25rem">
+  <div
+    id="carouselExampleIndicators"
+    class="carousel slide"
+    data-bs-ride="true"
+  >
+    <div class="carousel-inner">
+      <div class="images-card">
+        <div
+          *ngFor="let img of product.images; let i = index"
+          [ngClass]="i == 0 ? 'carousel-item active' : 'carousel-item'"
+        >
+          <img [src]="img" class="d-block w-100" alt="..." />
+        </div>
+      </div>
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ product.title }}</h5>
+    <h5 class="card-title">${{ product.price }}</h5>
+    <h5 class="card-title">rating: {{ product.rating }}</h5>
+    <h5 class="card-title">brand: {{ product.brand }}</h5>
+    <h5 class="card-title">category: {{ product.category }}</h5>
+    <h5 class="card-title">discount%: {{ product.discountPercentage }}</h5>
+    <h5 class="card-title">stock: {{ product.stock }}</h5>
+    <h5 class="card-title">description: {{ product.description }}</h5>
+  </div>
+  <button routerLink="/reactieveform" class="btn btn-primary">Buy now</button>
+</div>

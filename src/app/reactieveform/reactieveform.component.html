@@ -1,0 +1,153 @@
+<div
+  style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+  "
+>
+  <div>
+    <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+      <h2>Registration Form</h2>
+      <label>Enter your First name</label>
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          name="firstName"
+          formControlName="firstName"
+          required
+        />
+      </div>
+      <span
+        class="text text-danger"
+        *ngIf="firstName && firstName.invalid && firstName.touched"
+        >This input is not valid
+      </span>
+      <br />
+      <label>Enter your Lastname</label>
+
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="lastName"
+          name="lastName"
+          required
+        />
+      </div>
+      <span
+        class="text text-danger"
+        *ngIf="lastName && lastName.invalid && lastName.touched"
+        >This input is not valid
+      </span>
+      <br />
+      <label>Enter your Age</label>
+
+      <div>
+        <input
+          type="number'"
+          class="form-control"
+          formControlName="age"
+          name="age"
+          required
+        />
+      </div>
+      <span
+        class="text text-danger"
+        *ngIf="age && age.invalid && age.touched"
+        >This input is not valid
+      </span>
+      <br />
+        <label>Select your Gender</label>
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          name="gender"
+          formControlName="gender"
+          required
+        />
+      </div>
+      <!-- <span
+        class="text text-danger"
+        *ngIf="username && username.invalid && username.touched"
+        >This input is not valid
+      </span> -->
+      <br>
+       <label>Enter your email</label>
+      <div class="form-group">
+        <input
+          type="email"
+          class="form-control"
+          name="email"
+          formControlName="email"
+          required
+        />
+      </div>
+      <span
+        class="text text-danger"
+        *ngIf="email && email.invalid && email.touched"
+        >This input is not valid
+      </span>
+      <br>
+       <label>Enter your User Name</label>
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          name="username"
+          formControlName="username"
+          required
+        />
+      </div>
+      <span
+        class="text text-danger"
+        *ngIf="username && username.invalid && username.touched"
+        >This input is not valid
+      </span>
+      <br>
+       <label>Enter your password</label>
+      <div class="form-group">
+        <input
+          type="password"
+          class="form-control"
+          name="password"
+          formControlName="password"
+          required
+        />
+      </div>
+      <span
+        class="text text-danger"
+        *ngIf="password && password.invalid && password.touched"
+        >This input is not valid
+      </span>
+      <br>
+       <label>Enter your mobilenumber</label>
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          name="phone"
+          formControlName="phone"
+          required
+        />
+      </div>
+      <span
+        class="text text-danger"
+        *ngIf="phone && phone.invalid && phone.touched"
+        >This input is not valid
+      </span>
+      <br>
+      <div>
+        <button
+          [disabled]="signUpForm.invalid"
+          class="btn btn-success"
+          type="submit"
+        >
+        SignUp
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

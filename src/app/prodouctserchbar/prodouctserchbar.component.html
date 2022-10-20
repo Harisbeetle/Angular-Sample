@@ -1,0 +1,26 @@
+<div class="search-container">
+  <h2>Find Your Products</h2>
+
+  <input type="text" placeholder="Serch" [(ngModel)]="serchText" />
+
+  <button style="margin-left: 2px;" (click)="setSerchText()" class="btn btn-success" type="submit">
+    Serch
+  </button>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3 mb-1" *ngFor="let data of prodouctList">
+      <div class="card">
+        <img [src]="data.thumbnail" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{ data.title }}</h5>
+          <h5 class="card-title">${{ data.price }}</h5>
+          <h5 class="card-title">rating: {{ data.rating }}</h5>
+          <h5 class="card-title">brand: {{ data.brand }}</h5>
+          <a [routerLink]="data.id" class="btn btn-primary">view </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

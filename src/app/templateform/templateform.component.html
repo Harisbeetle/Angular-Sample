@@ -1,0 +1,69 @@
+<form #detailForm="ngForm" (ngSubmit)="addDetails(studdetails)">
+  <label>Enter your First Name</label>
+  <div class="form-group">
+    <input
+      type="text"
+      name="firstname"
+      class="form-control"
+      [(ngModel)]="studdetails.firstname"
+    />
+  </div>
+  <label>Enter your Last Name</label>
+  <div class="form-group">
+    <input
+      name="lastname"
+      type="text"
+      class="form-control"
+      [(ngModel)]="studdetails.lastname"
+    />
+  </div>
+  <label>Enter your age</label>
+  <div class="form-group">
+    <input
+      type="number"
+      name="userage"
+      class="form-control"
+      [(ngModel)]="studdetails.userage"
+    />
+  </div>
+  <label>Enter your Email</label>
+    <div class="form-group">
+    <input
+      name="useremail"
+      type="email"
+      class="form-control"
+      [(ngModel)]="studdetails.useremail"
+    />
+  </div>
+  <label>Enter your username</label>
+    <div class="form-group">
+    <input
+      name="username"
+      type="text"
+      class="form-control"
+      [(ngModel)]="studdetails.username"
+    />
+  </div>
+   <label>Enter your password</label>
+    <div class="form-group">
+    <input
+      name="password"
+      type="password"
+      class="form-control"
+      [(ngModel)]="studdetails.password"
+    />
+  </div>
+    <label>Enter your mobilenumber</label>
+   
+    <div class="form-group">
+    <input
+      name="mobilenumber"
+      type="number"
+      class="form-control"
+      [(ngModel)]="studdetails.mobilenumber"
+    />
+  </div>
+  <div>
+    <input type="submit" class="btn btn-success" />
+  </div>
+</form>
