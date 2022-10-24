@@ -1,11 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import {environment} from '../environments/environment'
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
-  private url: string = 'https://dummyjson.com';
+  private url: string = environment.baseUrl;
   serchProdouct(prodouctList: any) {
     return this.h.get(`${this.url}/products/search?q=${prodouctList}`);
   }

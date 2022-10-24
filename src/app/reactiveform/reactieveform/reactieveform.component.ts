@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import{FormGroup,FormControl,Validators}from '@angular/forms'
-import { ApiService } from '../api.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ApiService } from 'src/app/api.service';
+
 
 @Component({
   selector: 'app-reactieveform',
@@ -20,6 +21,7 @@ export class ReactieveformComponent implements OnInit {
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl(''),
   });
+  constructor(public ser: ApiService) {}
 
   signUp() {
     console.log(this.signUpForm.value);
@@ -54,7 +56,9 @@ export class ReactieveformComponent implements OnInit {
     return this.signUpForm.get('phone');
   }
 
-  constructor(public ser: ApiService) {}
+  submitForm() {
+    alert('registration sucess');
+  }
 
   ngOnInit(): void {}
 }

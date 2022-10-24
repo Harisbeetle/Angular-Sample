@@ -1,11 +1,4 @@
-<div
-  style="
-    display: flex;
-    justify-content: center;
-    align-items: center;
- 
-  "
->
+<div class="signup-container">
   <div>
     <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
       <h2>Registration Form</h2>
@@ -53,13 +46,11 @@
           required
         />
       </div>
-      <span
-        class="text text-danger"
-        *ngIf="age && age.invalid && age.touched"
+      <span class="text text-danger" *ngIf="age && age.invalid && age.touched"
         >This input is not valid
       </span>
       <br />
-        <label>Select your Gender</label>
+      <label>Select your Gender</label>
       <div class="form-group">
         <input
           type="text"
@@ -74,8 +65,8 @@
         *ngIf="username && username.invalid && username.touched"
         >This input is not valid
       </span> -->
-      <br>
-       <label>Enter your email</label>
+      <br />
+      <label>Enter your email</label>
       <div class="form-group">
         <input
           type="email"
@@ -90,8 +81,8 @@
         *ngIf="email && email.invalid && email.touched"
         >This input is not valid
       </span>
-      <br>
-       <label>Enter your User Name</label>
+      <br />
+      <label>Enter your User Name</label>
       <div class="form-group">
         <input
           type="text"
@@ -106,8 +97,8 @@
         *ngIf="username && username.invalid && username.touched"
         >This input is not valid
       </span>
-      <br>
-       <label>Enter your password</label>
+      <br />
+      <label>Enter your password</label>
       <div class="form-group">
         <input
           type="password"
@@ -122,8 +113,8 @@
         *ngIf="password && password.invalid && password.touched"
         >This input is not valid
       </span>
-      <br>
-       <label>Enter your mobilenumber</label>
+      <br />
+      <label>Enter your mobilenumber</label>
       <div class="form-group">
         <input
           type="text"
@@ -138,14 +129,15 @@
         *ngIf="phone && phone.invalid && phone.touched"
         >This input is not valid
       </span>
-      <br>
+      <br />
       <div>
         <button
+          (click)="submitForm()"
           [disabled]="signUpForm.invalid"
           class="btn btn-success"
           type="submit"
         >
-        SignUp
+          SignUp
         </button>
       </div>
     </form>

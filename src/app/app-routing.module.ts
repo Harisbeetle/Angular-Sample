@@ -1,15 +1,29 @@
-import { NgModule } from '@angular/core';
+import { Host, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ProdouctdetailsComponent } from './prodouctdetails/prodouctdetails.component';
-import { ProdouctserchbarComponent } from './prodouctserchbar/prodouctserchbar.component';
-import { ReactieveformComponent } from './reactieveform/reactieveform.component';
-import { TemplateformComponent } from './templateform/templateform.component';
+import { ChildeComponent } from './childe/childe.component';
+import { HomeComponent } from './home/home.component';
+import { ParentComponent } from './parent/parent.component';
+import { ProdouctdetailsComponent } from './pdetails/prodouctdetails/prodouctdetails.component';
 
+import { TemplateformComponent } from './templateform/templateform.component';
 const routes: Routes = [
   { path: 'templateform', component: TemplateformComponent },
-  { path: 'reactieveform', component: ReactieveformComponent },
-  { path: 'prodouctsearchbar', component: ProdouctserchbarComponent },
-  { path: 'prodouctsearchbar/:id', component: ProdouctdetailsComponent },
+  {
+    path: 'reactform',
+    loadChildren: () =>
+      import('./reactiveform/signup.module').then((m) => m.SignupModule),
+  },
+  {
+    path: 'prodouctsearchbar',
+    loadChildren: () =>
+      import('./prodouctserch/prodouctserch.module').then(
+        (m) => m.ProdouctserchModule
+      ),
+  },
+  { path: 'prodouctsearchbar/:id', loadChildren: ()=> import('./pdetails/pdetails.module').then((m)=>m.PdetailsModule) },
+  { path: 'home', component: HomeComponent },
+  { path: 'parent', component: ParentComponent },
+  { path: 'childe', component: ChildeComponent },
 ];
 
 @NgModule({

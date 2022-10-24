@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api.service';
+import { ApiService } from 'src/app/api.service';
 
 @Component({
   selector: 'app-prodouctserchbar',
@@ -10,11 +10,11 @@ export class ProdouctserchbarComponent implements OnInit {
   public prodouctList: Array<any> = [];
 
   serchText: any = null;
-  id:any;
+  id: any;
+
+  constructor(public ser: ApiService) {}
 
   setSerchText() {
-    console.log(this.serchText);
-
     this.ser.serchProdouct(this.serchText).subscribe((res: any) => {
       console.log(res);
 
@@ -22,9 +22,6 @@ export class ProdouctserchbarComponent implements OnInit {
       console.log(this.prodouctList);
     });
   }
-
-
-  constructor(public ser: ApiService) {}
 
   ngOnInit(): void {}
 }
